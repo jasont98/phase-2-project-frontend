@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 function Search({ onSubmitQuery }) {
     
     const [city, setCity] = useState("");
