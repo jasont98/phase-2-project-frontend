@@ -20,16 +20,18 @@
                     <mxGeometry x="340" y="40" width="130" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="6">
-                    <mxGeometry relative="1" as="geometry"/>
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="680" y="280" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="Weather /watch List" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="600" y="150" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="640" y="159" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="20">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="Search Form" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="470" y="170" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="450" y="159" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="About" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry x="230" y="159" width="80" height="80" as="geometry"/>
@@ -38,7 +40,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="Weather Card w/ delete from list button" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="600" y="320" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="640" y="320" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
                     <mxGeometry x="90" y="30" width="30" height="60" as="geometry"/>
@@ -50,7 +52,7 @@
                     <mxGeometry x="160" y="30" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="Tokyo-temp-time" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-                    <mxGeometry x="700" y="300" width="140" height="120" as="geometry"/>
+                    <mxGeometry x="610" y="400" width="140" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="temp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="16">
                     <mxGeometry y="30" width="140" height="30" as="geometry"/>
@@ -59,13 +61,13 @@
                     <mxGeometry y="60" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="moon" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="16">
-                    <mxGeometry y="90" width="140" height="30" as="geometry"/>
+                    <mxGeometry y="90" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="20" target="6">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="Same weather card w/ add to list button" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="365" y="320" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="450" y="320" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="NavBar" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry x="50" y="159" width="80" height="80" as="geometry"/>
