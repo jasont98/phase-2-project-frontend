@@ -1,8 +1,13 @@
 function WeatherCard({ weather }) {
+
+
+
     return (
         <div>
             <h1>{weather.name}</h1>
-            <h1>{}</h1>
+            {/* <h1>{weather.cod}</h1>
+            <h1>{weather.weather[0].main}</h1>
+            <h1>{weather.main.feels_like}</h1> */}
         </div>
     )
 
