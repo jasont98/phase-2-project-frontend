@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import '../App.css';
+import WeatherCard from './weatherCard';
 
 function App() {
+
+  const [weather, setWeather] = useState({})
+
+  const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
+
+  const city = 'colorado'
+
+  const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+
+  useEffect(() => {
+    fetch(queryURL)
+    .then(r=>r.json())
+    .then((weather)=>setWeather(weather))
+  }, [])
+  
+  console.log(weather)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <WeatherCard weather={weather} />
     </div>
   );
 }
