@@ -15,7 +15,7 @@ function Search({ onSubmitQuery }) {
 
 
     return (
-        <form onSubmit={handleSubmit}>Search for a city or zipcode: 
+        <form onSubmit={handleSubmit}>Search for a city, state or zipcode: 
             <input value={city} onChange={handleChange} />
             <button>🔎</button>
         </form>
