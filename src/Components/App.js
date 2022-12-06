@@ -1,32 +1,33 @@
-import React, { useEffect, useState, useRef } from 'react';
+// import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
-import WeatherCard from './WeatherCard';
+import WeatherCard from './weatherCard';
+import Search from './Search';
 
 function App() {
 
-  const [weather, setWeather] = useState([])
+  const [weather, setWeather] = useState([]);
 
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
-  const city = 'colorado'
+  const [city, setCity] = useState('denver')
+  
+  const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
-  const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-  const renderAfterCalled = useRef(false);
-
+  console.log(city)
   useEffect(() => {
-    if (!renderAfterCalled.current) {
     fetch(queryURL)
-    .then(r=>r.json())
-    .then((weather)=>setWeather(weather))}
-    renderAfterCalled.current = true;
-
-  }, [])
+      .then((r)=>r.json())
+      .then((weather)=> 
+      (setWeather(weather))
+    );
+  }, [city])
   
   console.log(weather)
 
   return (
     <div>
+      <Search onSubmitQuery={setCity} />
       <WeatherCard weather={weather} />
     </div>
   );
