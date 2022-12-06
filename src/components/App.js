@@ -9,7 +9,7 @@ function App() {
 
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
-  const city = 'dubai'
+  const city = 'colorado'
 
   const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
