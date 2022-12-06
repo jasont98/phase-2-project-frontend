@@ -3,6 +3,10 @@ import '../App.css';
 import WeatherCard from './WeatherCard';
 import About from './About';
 import Home from './Home';
+import NavBar from './NavBar';
+import Search from './Search';
+import { Route, Switch } from 'react-router-dom'
+import CardList from './CardList';
 
 function App() {
 
@@ -29,6 +33,21 @@ function App() {
 
   return (
     <div>
+      <NavBar />
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/watchlist" >
+      <CardList />
+      </Route>
+      {/* <Route path="/search">
+      <Search />
+      </Route> */}
+      <Route path= "/about">
+      <About />
+      </Route>
+    </Switch>
       <WeatherCard weather={weather} />
     </div>
   );
