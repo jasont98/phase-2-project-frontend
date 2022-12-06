@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../App.css';
 import WeatherCard from './WeatherCard';
+import About from './About';
+import Home from './Home';
 
 function App() {
 
