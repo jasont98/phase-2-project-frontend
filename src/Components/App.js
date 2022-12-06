@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import WeatherCard from './WeatherCard';
-import Search from './Search';
+import About from './About';
+import Home from './Home';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     );
   }, [city])
   // console.log(weather)
-  
+
   return (
     <div>
       <Search onSubmitQuery={setCity} />
