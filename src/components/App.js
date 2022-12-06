@@ -8,26 +8,26 @@ function App() {
 
   const [weather, setWeather] = useState([]);
 
-  useEffect(() => {
-
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
-  const city = 'tokyo'
+  const [city, setCity] = useState('denver')
   
-  const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+  const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
+  console.log(city)
+  useEffect(() => {
     fetch(queryURL)
       .then((r)=>r.json())
       .then((weather)=> 
       (setWeather(weather))
     );
-  }, [])
+  }, [city])
   
   console.log(weather)
 
   return (
     <div>
-      <Search />
+      <Search onSubmitQuery={setCity} />
       <WeatherCard weather={weather} />
     </div>
   );
