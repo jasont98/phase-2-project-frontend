@@ -17,7 +17,6 @@ const About = () => {
   }
 `
 
-
   return (
     
     <>
@@ -29,7 +28,7 @@ const About = () => {
         <br></br>
         <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Weather Info Search</h2> 
       </div>
-     <div>
+      <div>
        <h4>A simple app that allows the user to search thru different weathers of cities, and add those cities to a watchlist</h4>
        <p>Created by: William, Ian and Jason</p>
       </div>
