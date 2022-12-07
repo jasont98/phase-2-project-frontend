@@ -1,3 +1,33 @@
+
+
+.Snowflake {
+	display: inline-block;
+	width: 0.1%;
+	color: #FFFAFA;
+	opacity: 0;
+	font-size: 120px;
+	margin: 0;
+	padding: 0;
+	animation: fall 16s linear infinite;
+}
+
+@keyframes fall {
+	0% {
+		opacity: 0;
+	}
+	3% {
+		opacity: 0.9;
+	}
+
+	90% {
+		opacity: 0.9;
+	}
+	100% {
+		transform: translate(0, 97vh);
+		opacity: 0;
+	}
+}
+
 .App {
   text-align: center;
 }
@@ -78,3 +108,4 @@
 .search-bar {
   font-size: 30px;
 }
+
