@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     padding: 0 30;
     background-color: #222;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.301);
     width: 95%;
     height: 80px;
     border-radius: 13px;
@@ -16,5 +16,27 @@
 }
 
 .logostyle {
-    color: #fff
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.navItem {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    justify-content: end;
+    /* text-decoration: none; */
+    color: #fff;
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    
+}
+
+navItem:hover{
+    background: rgb(80, 80  , 250);
+    
 }
