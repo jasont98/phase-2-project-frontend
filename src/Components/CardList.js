@@ -1,27 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import WeatherCard from './WeatherCard';
+import SavedWeatherCard from './SavedWeatherCard';
 
-export const CardList = ({ savedCity }) => {
+export const CardList = ({ savedCitys, weatherIcon, handleDelete }) => {
 
-  const [weather4, setWeather4] = useState([]);
+  const [weatherObjs, setWeatherObjs] = useState([]);
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
-  console.log(savedCity?.[0]?.name)
-
-  useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${savedCity[0]?.name}&appid=${APIKey}`)
+  const createSavedCitys = () => {
+    return savedCitys.map((savedCity) => {
+      return ( 
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${savedCity.name}&appid=${APIKey}`)
       .then((r)=>r.json())
-      .then((weather4)=> 
-      (setWeather4(weather4))
-    );
-  }, [])
+      .then((weatherObj)=> {
+        setWeatherObjs(weatherObjs => [...weatherObjs, weatherObj])
+      }
+    ))})
+  }
+
+  useEffect(() => {createSavedCitys();
+  }, [savedCitys])
+
+  const renderSavedCards = () => {
+    return weatherObjs.map((weatherObj) => {
+      console.log(weatherObj)
+      return (
+        <SavedWeatherCard weather={weatherObj} weatherIcon={weatherIcon} handleDelete={handleDelete} />
+      )})
+    }
   
   return (
     <div className="saved-container">
-
-      <WeatherCard weather={weather4} />
+      {renderSavedCards()}
     </div>
   )
 }
 
 export default CardList;
+
+
+

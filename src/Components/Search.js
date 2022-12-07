@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import WeatherCard from './WeatherCard'
+import SearchWeatherCard from './SearchCard'
 
-function Search({ onSubmitQuery, weather }) {
+function Search({ onSubmitQuery, weather, weatherIcon }) {
     
     const [city, setCity] = useState("");
 
@@ -21,7 +21,7 @@ function Search({ onSubmitQuery, weather }) {
                 <button>🔎</button>
             </form>
             <div className="flexbox-container2">
-                <WeatherCard weather={weather} />
+                <SearchWeatherCard weatherIcon={weatherIcon} weather={weather} handleSubmit={handleSubmit} />
             </div>
         </div>
     )
