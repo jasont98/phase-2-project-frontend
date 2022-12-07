@@ -72,4 +72,9 @@
 
 .weather-card {
  margin: auto;
+ font-size: 35px;
+}
+
+.search-bar {
+  font-size: 30px;
 }

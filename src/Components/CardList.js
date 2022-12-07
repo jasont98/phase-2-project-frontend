@@ -9,7 +9,7 @@ export const CardList = ({ savedCity }) => {
   console.log(savedCity?.[0]?.name)
 
   useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${savedCity[2]?.name}&appid=${APIKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${savedCity[0]?.name}&appid=${APIKey}`)
       .then((r)=>r.json())
       .then((weather4)=> 
       (setWeather4(weather4))
@@ -18,10 +18,10 @@ export const CardList = ({ savedCity }) => {
   
   return (
     <div className="saved-container">
-      
+
       <WeatherCard weather={weather4} />
     </div>
   )
 }
 
-export default CardList
+export default CardList;

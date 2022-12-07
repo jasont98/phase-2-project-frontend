@@ -16,7 +16,7 @@ function Search({ onSubmitQuery, weather }) {
 
     return (
         <div className="search-container">
-            <form onSubmit={handleSubmit}>Search for a city, state or zipcode: 
+            <form className="search-bar" onSubmit={handleSubmit}>Search for a city, state or zipcode:
                 <input value={city} onChange={handleChange} />
                 <button>🔎</button>
             </form>

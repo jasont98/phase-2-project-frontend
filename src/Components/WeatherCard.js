@@ -10,7 +10,7 @@ function WeatherCard({ weather }) {
       
     return (
         <div className="weather-card">
-            <Card >
+            <Card className="ui raised card" >
                 <Card.Content>
                     <Card.Header className="header">{weather.name}</Card.Header>
                     <h3>Country: {weather.sys?.country}</h3>
