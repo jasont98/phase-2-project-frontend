@@ -4,9 +4,12 @@ import '../App.css';
 import WeatherCard from './WeatherCard';
 import About from './About';
 import Home from './Home';
-import Search from './Search';
+
 import NavBar from './NavBar';
-import {Route, Switch} from 'react-router-dom';
+import Search from './Search';
+import { Route, Switch } from 'react-router-dom'
+import CardList from './CardList';
+
 
 function App() {
 
@@ -28,22 +31,22 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route>
-          <Search onSubmitQuery={setCity} />
 
-          <WeatherCard weather={weather} />
-        </Route>
-        <Route>
-          <About />
-        </Route>
-        <Route>
-          <Search onSubmitQuery={setCity} />
-        </Route>
-      </Switch>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/watchlist" >
+      <CardList />
+      </Route>
+      {/* <Route path="/search">
+      <Search onSubmitQuery={setCity}/>
+      </Route> */}
+      <Route path= "/about">
+      <About />
+      </Route>
+    </Switch>
+      <WeatherCard weather={weather} />
     </div>
   );
 }
