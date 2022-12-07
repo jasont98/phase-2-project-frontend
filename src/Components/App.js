@@ -39,9 +39,9 @@ function App() {
       <Route path="/watchlist" >
       <CardList />
       </Route>
-      {/* <Route path="/search">
+      <Route path="/search">
       <Search onSubmitQuery={setCity}/>
-      </Route> */}
+      </Route>
       <Route path= "/about">
       <About />
       </Route>
