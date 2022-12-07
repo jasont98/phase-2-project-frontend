@@ -10,6 +10,7 @@ const Home = ({ weather1, weather2, weather3 }) => {
   .About {
     text-align: center;
     color: darkcyan;
+    padding-top: 80px;
   }
 
   body {
@@ -44,7 +45,7 @@ const Rotate = styled.div`
     <SnowFall />
       <br></br>
       <br></br>
-    <Rotate className="emoji-container"> 🥶 </Rotate>
+    <Rotate> 🥶 </Rotate>
       <br></br>
        <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Home</h2> 
     </div>

@@ -68,7 +68,7 @@
 }
 
 .flexbox-container {
-  padding-top: 150px;
+  padding-top: 3git add0px;
   display: flex;
   flex-direction: row;
   /* align-items: center;
@@ -76,7 +76,6 @@
 }
 
 .flexbox-container2 {
-  padding-top: 30px;
   display: flex;
   flex-direction: row;
   /* align-items: center;
