@@ -29,24 +29,23 @@ function App() {
   // console.log(weather)
 
   return (
-    <div>
+    <div className="App" >
       <NavBar />
-
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/watchlist" >
-      <CardList />
-      </Route>
-      {/* <Route path="/search">
-      <Search onSubmitQuery={setCity}/>
-      </Route> */}
-      <Route path= "/about">
-      <About />
-      </Route>
-    </Switch>
-      <WeatherCard weather={weather} />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/watchlist" >
+          <CardList />
+          </Route>
+          <Route path="/search">
+          <Search onSubmitQuery={setCity}/>
+          </Route>
+          <Route path= "/about">
+          <About />
+          </Route>
+        </Switch>
+      <WeatherCard weather={weather}/>
     </div>
   );
 }

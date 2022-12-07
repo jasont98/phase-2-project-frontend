@@ -1,3 +1,6 @@
+// import './styles.css';
+import { Card } from 'semantic-ui-react'
+
 function WeatherCard({ weather }) {
 
     const temperatureConverter = (valNum) => {
@@ -6,12 +9,16 @@ function WeatherCard({ weather }) {
       }
       
     return (
-        <div>
-            <h1>{weather.name}</h1>
-                <h3>Country: {weather.sys?.country}</h3>
-                <h1>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h1>
-                <h1>vibes: {weather.weather?.[0].description}</h1>
-                <h1>number of clouds: {weather.clouds?.all}</h1>
+        <div class="ui centered card">
+            <Card class="ui centered card">
+                <Card.Content>
+                    <Card.Header className="header">{weather.name}</Card.Header>
+                    <h3>Country: {weather.sys?.country}</h3>
+                    <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
+                    <h3>vibes: {weather.weather?.[0].description}</h3>
+                    <h3>number of clouds: {weather.clouds?.all}</h3>
+                </Card.Content> 
+            </Card>
         </div>
     )
 
