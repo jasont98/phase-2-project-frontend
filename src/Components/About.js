@@ -1,7 +1,5 @@
 import React from 'react'
 import {createGlobalStyle, ThemeProvider} from "styled-components"
-import Particles from 'react-tsparticles'
-import {loadFull} from 'tsparticles'
 import SnowFall from 'react-snowfall'
 import styled, {keyframes} from "styled-components"
 
