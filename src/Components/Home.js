@@ -1,11 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import SnowFall from 'react-snowfall';
-import {createGlobalStyle, ThemeProvider} from "styled-components";
+import {createGlobalStyle} from "styled-components";
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
 
-const Home = ({ weather1, weather2, weather3 }) => {
+const Home = ({ displayedCitys, weatherIcon }) => {
+
+  const [weatherObjs, setWeatherObjs] = useState([]);
+  const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
+
+  const createSavedCitys = () => {
+    return displayedCitys.map((displayedCity) => {
+      return ( 
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${displayedCity.name}&appid=${APIKey}`)
+      .then((r)=>r.json())
+      .then((weatherObj)=> {
+        setWeatherObjs(weatherObjs => [...weatherObjs, weatherObj])
+      }
+    ))})
+  }
+
+  useEffect(() => {createSavedCitys();
+  }, [displayedCitys])
+
+  const renderWeatherCards = () => {
+    return weatherObjs.map((weatherObj) => {
+      console.log(weatherObj)
+      return (
+        <WeatherCard weather={weatherObj} weatherIcon={weatherIcon} />
+      )})
+    }
+  
 
   const images = ["./snow-city.jpg", "./rainy-day.jpg", "./sunny-field.jpg", "./clear-night.jpg"]
 
@@ -25,11 +51,11 @@ const Home = ({ weather1, weather2, weather3 }) => {
 }, [])
 
   const GlobalStyle = createGlobalStyle`
-  .About {
-    text-align: center;
-    color: darkcyan;
-    padding-top: 80px;
-  }
+    .About {
+      text-align: center;
+      color: darkcyan;
+      padding-top: 80px;
+    }
 
   body {
     color: darkcyan; 
@@ -60,22 +86,21 @@ const Home = ({ weather1, weather2, weather3 }) => {
 `
 
 const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+      transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
-`;
+    to {
+      transform: rotate(360deg);
+    }
+  `;
 
-// Here we create a component that will rotate everything we pass in over two seconds
 const Rotate = styled.div`
-  display: inline-block;
-  animation: ${rotate} 3s linear infinite;
-  padding: 2rem 1rem;
-  font-size: 4.2rem;
-`;
+    display: inline-block;
+    animation: ${rotate} 2s linear infinite;
+    padding: 2rem 1rem;
+    font-size: 4.2rem;
+  `;
 
   return (
     <>
@@ -93,9 +118,7 @@ const Rotate = styled.div`
     </div>
     
     <div className="flexbox-container">
-      <WeatherCard weather={weather1} />
-      <WeatherCard weather={weather2} />
-      <WeatherCard weather={weather3} />
+      {renderWeatherCards()}
     </div>
     </>
   )

@@ -115,3 +115,7 @@
 .emoji-container {
   padding-top: 150px;
 }
+
+.ui-raised-card {
+  backdrop-filter: blur(14px);
+}
