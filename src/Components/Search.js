@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import WeatherCard from './WeatherCard'
 
-function Search({ onSubmitQuery }) {
+function Search({ onSubmitQuery, weather }) {
     
     const [city, setCity] = useState("");
 
@@ -15,10 +16,13 @@ function Search({ onSubmitQuery }) {
 
 
     return (
-        <form onSubmit={handleSubmit}>Search for a city, state or zipcode: 
-            <input value={city} onChange={handleChange} />
-            <button>🔎</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>Search for a city, state or zipcode: 
+                <input value={city} onChange={handleChange} />
+                <button>🔎</button>
+            </form>
+            <WeatherCard weather={weather} />
+        </div>
     )
 }
 

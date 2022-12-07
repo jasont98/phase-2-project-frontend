@@ -1,8 +1,13 @@
 import React from 'react'
+import WeatherCard from './WeatherCard'
 
-const Home = () => {
+const Home = ({ weather }) => {
   return (
-    <div>Home</div>
+    <div class="flexbox-container">
+      <WeatherCard weather={weather} />
+      <WeatherCard weather={weather} />
+      <WeatherCard weather={weather} />
+    </div>
   )
 }
 
