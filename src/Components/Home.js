@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
+import SnowFall from 'react-snowfall';
+import {createGlobalStyle, ThemeProvider} from "styled-components";
+import { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import WeatherCard from './WeatherCard'
 
-import SnowFall from 'react-snowfall'
-import {createGlobalStyle, ThemeProvider} from "styled-components"
-import { keyframes } from 'styled-components'
-import styled from 'styled-components'
-
-const Home = () => {
+const Home = ({ weather1, weather2, weather3 }) => {
   const GlobalStyle = createGlobalStyle`
   .About {
     text-align: center;
@@ -44,23 +44,18 @@ const Rotate = styled.div`
     <SnowFall />
       <br></br>
       <br></br>
-    <Rotate> 🥶 </Rotate>
+    <Rotate className="emoji-container"> 🥶 </Rotate>
       <br></br>
        <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Home</h2> 
     </div>
-    </>
-
-import WeatherCard from './WeatherCard'
-
-const Home = ({ weather1, weather2, weather3 }) => {
-  return (
+    
     <div className="flexbox-container">
       <WeatherCard weather={weather1} />
       <WeatherCard weather={weather2} />
       <WeatherCard weather={weather3} />
     </div>
-
+    </>
   )
 }
 
-export default Home
+export default Home;

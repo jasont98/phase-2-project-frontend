@@ -28,7 +28,6 @@ function App() {
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
   const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
-=======
   const queryURL1 = `http://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=${APIKey}`;
   const queryURL2 = `http://api.openweathermap.org/data/2.5/weather?q=${city2}&appid=${APIKey}`;
   const queryURL3 = `http://api.openweathermap.org/data/2.5/weather?q=${city3}&appid=${APIKey}`;
@@ -99,7 +98,6 @@ function App() {
         </Switch>
 
     </div>
-    </>
   );
 }
 
