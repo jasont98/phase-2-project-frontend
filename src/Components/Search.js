@@ -8,12 +8,11 @@ function Search({ onSubmitQuery, weather }) {
     function handleSubmit(event) {
         event.preventDefault();
         onSubmitQuery(city);
-      }
+    }
     
       function handleChange(event) {
         setCity(event.target.value);
-      }    
-
+    }    
 
     return (
         <div className="search-container">
@@ -21,7 +20,9 @@ function Search({ onSubmitQuery, weather }) {
                 <input value={city} onChange={handleChange} />
                 <button>🔎</button>
             </form>
-            <WeatherCard weather={weather} />
+            <div className="flexbox-container2">
+                <WeatherCard weather={weather} />
+            </div>
         </div>
     )
 }

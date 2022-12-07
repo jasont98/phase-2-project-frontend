@@ -45,6 +45,31 @@
   justify-content: center; */
 }
 
+.flexbox-container2 {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+
 .search-container {
   padding-top: 150px;
+}
+
+
+.about-container {
+  padding-top: 150px;
+  justify-items: center;
+}
+
+.saved-container {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: row;
+}
+
+.weather-card {
+ margin: auto;
 }

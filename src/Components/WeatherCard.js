@@ -9,14 +9,14 @@ function WeatherCard({ weather }) {
       }
       
     return (
-        <div className="ui container center aligned">
-            <Card className="ui segment" >
+        <div className="weather-card">
+            <Card >
                 <Card.Content>
                     <Card.Header className="header">{weather.name}</Card.Header>
                     <h3>Country: {weather.sys?.country}</h3>
                     <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
                     <h3>vibes: {weather.weather?.[0].description}</h3>
-                    <h3>number of clouds: {weather.clouds?.all}</h3>
+                    <h3>cloudy: {weather.clouds?.all}%</h3>
                 </Card.Content> 
             </Card>
         </div>
