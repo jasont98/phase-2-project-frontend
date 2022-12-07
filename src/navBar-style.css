@@ -38,6 +38,10 @@
     
 }
 
+.active {
+    color: rgb(80, 80  , 250);
+}
+
 navItem:hover{
     background: rgb(80, 80  , 250);
     
