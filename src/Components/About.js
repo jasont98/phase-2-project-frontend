@@ -7,8 +7,6 @@ import styled, {keyframes} from "styled-components"
 
 const About = () => {
 
-  
-
   const GlobalStyle = createGlobalStyle`
 
   .About {
@@ -21,7 +19,6 @@ const About = () => {
     font-family: Tahoma;
   }
 `
-
 
   return (
     <>
