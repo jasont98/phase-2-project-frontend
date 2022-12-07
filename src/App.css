@@ -78,6 +78,7 @@
 .flexbox-container2 {
   display: flex;
   flex-direction: row;
+  padding-top: 30px;
   /* align-items: center;
   justify-content: center; */
 }
@@ -105,6 +106,7 @@
 }
 
 .search-bar {
+  
   font-size: 30px;
 }
 
