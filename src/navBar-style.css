@@ -16,8 +16,10 @@
 }
 
 .logostyle {
-    color: #ffff00;
+    color: #fff;
     font-size: 2.5rem;
+    position: relative;
+    right: -20px
 }
 
 .navItem {
@@ -38,5 +40,10 @@
 
 navItem:hover{
     background: rgb(80, 80  , 250);
+    
+
+}
+#globelogo {
+    position: relative;
     
 }

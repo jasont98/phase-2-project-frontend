@@ -5,7 +5,10 @@ import "../navBar-style.css"
 const NavBar = () => {
   return (
     <div className="navBar">
-      <h1 className="logostyle">My Weather App 🌞</h1>
+      <h1 className="logostyle">My Weather App</h1>
+      <NavLink id="globelogo" to="/" exact>
+      🌍
+      </NavLink>
       
     <NavLink className="navItem"
     to="/" exact>
