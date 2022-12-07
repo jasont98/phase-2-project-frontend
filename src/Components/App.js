@@ -29,7 +29,7 @@ function App() {
   // console.log(weather)
 
   return (
-    <div>
+    <div className="App" >
       <NavBar />
 
     <Switch>

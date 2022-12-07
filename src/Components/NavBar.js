@@ -22,6 +22,7 @@ const NavBar = () => {
       My Weather
     </NavLink>
   </div>)
+
 }
 
 export default NavBar;
