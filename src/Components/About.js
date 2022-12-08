@@ -62,7 +62,7 @@ const About = () => {
 
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <div className='About' style={{   position: '' }}>
       <SnowFall />
         <br></br>

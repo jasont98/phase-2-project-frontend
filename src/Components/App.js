@@ -16,7 +16,8 @@ function App() {
   const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
   const [savedCitys, setSavedCitys] = useState([]);
   const [displayedCitys, setDisplayedCitys] = useState([]);
-  const [weatherIcon, setWeatherIcon] = useState('');
+  const [weatherIcon, setWeatherIcon] = useState({});
+  const [weatherIcons, setWeatherIcons] = useState([]);
 
   useEffect(() => {
     fetch(queryURL)
@@ -34,6 +35,17 @@ function App() {
     );
   }, []);
 
+  const onAddCity = (newCity) => {
+    setSavedCitys((savedCitys) => [...savedCitys, newCity])
+  }
+
+  const handleDelete = (deletedCity) => {
+    const updatedCitys = savedCitys.filter(originalCity => {
+      return deletedCity.id !== originalCity.id;
+    });
+    setSavedCitys(updatedCitys);
+  }
+
   useEffect(() => {
     fetch("http://localhost:4000/displayed-cities")
       .then((r)=>r.json())
@@ -42,29 +54,23 @@ function App() {
     );
   }, []);
 
-  useEffect(() => {
+    useEffect(() => {
       fetch("http://localhost:4000/weather-icons")
         .then((r)=>r.json())
-        .then((weatherIcon)=> 
-        (setWeatherIcon(weatherIcon?.[0]?.image))
+        .then((weatherIcons)=> 
+        (setWeatherIcons(weatherIcons))
       );
     }, []);
-    
-  console.log(weatherIcon);
 
-  const handleDelete = () => {}
-
-  const handleSubmit = () => {}
   return (
-
     <div className="App" >
       <NavBar />
         <Switch>
           <Route path="/watchlist" >
-            <CardList weatherIcon={weatherIcon} savedCitys={savedCitys} handleDelete={handleDelete} />
+            <CardList savedCitys={savedCitys} handleDelete={handleDelete} />
           </Route>
           <Route path="/search">
-            <Search weatherIcon={weatherIcon} weather={weather} onSubmitQuery={setCity} handleSubmit={handleSubmit} />
+            <Search onSubmitQuery={setCity} weather={weather} onAddCity={onAddCity} />
           </Route>
           <Route path= "/about">
             <About />
@@ -73,7 +79,6 @@ function App() {
             <Home displayedCitys={displayedCitys} weatherIcon={weatherIcon} />
           </Route>
         </Switch>
-
     </div>
   );
 }

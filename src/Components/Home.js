@@ -4,9 +4,10 @@ import {createGlobalStyle} from "styled-components";
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
+
 import "../App.css" 
 import Main from './Main.jsx'
-import {Card} from 'semantic-ui-react'
+
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -31,13 +32,14 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     return weatherObjs.map((weatherObj) => {
       console.log(weatherObj)
       return (
-        <WeatherCard weather={weatherObj} weatherIcon={weatherIcon} />
+        <WeatherCard key={weatherObj.name} weather={weatherObj} weatherIcon={weatherIcon} />
       )})
     }
   
 
 
-  const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
+
     .About {
       text-align: center;
       color: darkcyan;
@@ -60,6 +62,7 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     // flexbox or css grid
     // mediaQuery
   }
+
 
   
   // BOUNCE ANIMATION
@@ -117,9 +120,6 @@ const Rotate = styled.div`
     <SnowFall />
     </div>
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
-    {/* <div className="flexbox-container">
-      {renderWeatherCards()}
-    </div> */}
     </>
   )
 }

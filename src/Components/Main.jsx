@@ -1,5 +1,4 @@
 import React from 'react'
-import video from './sunset_clouds.mp4'
 import '../MainStyles.css'
 import '../App.css'
 import { keyframes } from 'styled-components';
@@ -30,14 +29,16 @@ const Rotate = styled.div`
   return (
     <>
     <div className='main'>
-        <video src={video} autoPlay loop muted/>
+
+        <video src={`./sunset_clouds.mp4`} autoPlay loop muted/>
+
         <div className='content'>
           {/* <h1>Welcome from Main!</h1> */}
           <div className='homeBtn'>
             <Rotate> 🥶 </Rotate>
           </div>
           <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'}} className="homeBtn">Home</h2>        
-         
+
           <div className="flexbox-container">
             {renderWeatherCards()}
           </div>
@@ -47,4 +48,6 @@ const Rotate = styled.div`
   )
 }
 
-export default Main
+
+export default Main;
+

@@ -2,7 +2,8 @@ import { Card } from 'semantic-ui-react'
 import React from 'react';
 
 
-function WeatherCard({ weather, weatherIcon }) {
+function WeatherCard({ weather }) {
+
 
     const temperatureConverter = (valNum) => {
         valNum = parseFloat(valNum);
@@ -17,7 +18,7 @@ function WeatherCard({ weather, weatherIcon }) {
                     <h3>Country: {weather.sys?.country}</h3>
                     <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
                     <h3>vibes: {weather.weather?.[0].description}</h3>
-                    <img src={weatherIcon} alt={weather.name}></img>
+                    <img src={`./images/${weather.weather?.[0].description}.svg`} alt={weather.name}></img>
                     <h3>cloudy: {weather.clouds?.all}%</h3>
                 </Card.Content> 
             </Card>
