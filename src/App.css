@@ -119,3 +119,16 @@
 .ui-raised-card {
   backdrop-filter: blur(14px);
 }
+
+/* .main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */

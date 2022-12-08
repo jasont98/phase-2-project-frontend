@@ -1,6 +1,7 @@
 import { Card } from 'semantic-ui-react'
 import React from 'react';
 
+
 function WeatherCard({ weather, weatherIcon }) {
 
     const temperatureConverter = (valNum) => {
@@ -8,7 +9,7 @@ function WeatherCard({ weather, weatherIcon }) {
         return (((valNum-273.15)*1.8)+32).toFixed(0);
       }
 
-    return (
+    return (    
         <div className="weather-card">
             <Card className="ui-raised-card" >
                 <Card.Content>
