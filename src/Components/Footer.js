@@ -13,10 +13,10 @@ function Footer() {
         <section className="footer-info">
             <section className="footer-info-left">
               <section className= "footer-info_name">
-                Software Engineers William, Ian, and JSON
+                Flatiron School Phase 2 Project:
               </section>
               <section className= "footer-info_returns">
-                SOMETING
+             Junior Developers Ian, JSON, and William
                 <br />
               </section>
 
@@ -37,7 +37,7 @@ function Footer() {
               <section className="footer-info_contact">
                 <Link
                   to="/about" exact>
-                  About
+                  About This Project
                 </Link>
                 <br />
                 <a href="mailto:william.j.german2@gmail.com">Send Us Feedback!</a>
