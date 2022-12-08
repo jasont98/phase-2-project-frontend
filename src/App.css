@@ -99,12 +99,20 @@
 .saved-container {
   padding-top: 150px;
   display: flex;
-  flex-direction: row;
+  grid-template-areas: "a a a a";
+  gap: 10px;
+  grid-auto-rows: 100px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 510px;
+
 }
 
 .weather-card {
  margin: auto;
  font-size: 35px;
+
 }
 
 .search-bar {
@@ -118,4 +126,10 @@
 
 .ui-raised-card {
   backdrop-filter: blur(14px);
+
+  
+}
+
+.buttonSize {
+  font-size: small;
 }

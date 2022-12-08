@@ -1,52 +1,45 @@
 import { Card } from 'semantic-ui-react'
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-function SavedWeatherCard({ weatherObj, weatherIcons, handleDelete, setWeatherIcon, weatherIcon }) {
+function SavedWeatherCard({ savedCity, handleDelete }) {
+  // const { id, date, description, category, amount } = weather;
+  const [weather, setWeather] = useState({});
+  const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
-    const temperatureConverter = (valNum) => {
-        valNum = parseFloat(valNum);
-        return (((valNum-273.15)*1.8)+32).toFixed(0);
-      }
-      
-      console.log(weatherObj?.weather?.[0].description)
+  useEffect(()=>{
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${savedCity.name}&appid=${APIKey}`)
+    .then(r=>r.json())
+    .then(setWeather)
+  }, [savedCity])
 
-      if (weatherObj?.weather?.[0].description === 'clear sky') {
-            setWeatherIcon(weatherIcons?.[0]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'overcast clouds') {
-            setWeatherIcon(weatherIcons?.[1]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'broken clouds') {
-            setWeatherIcon(weatherIcons?.[2]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'scattered clouds') {
-            setWeatherIcon(weatherIcons?.[3]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'haze') {
-            setWeatherIcon(weatherIcons?.[4]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'light rain') {
-            setWeatherIcon(weatherIcons?.[5]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'mist') {
-            setWeatherIcon(weatherIcons?.[6]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'snow') {
-            setWeatherIcon(weatherIcons?.[7]?.image)
-        } else if (weatherObj?.weather?.[0].description === 'light snow') {
-            setWeatherIcon(weatherIcons?.[8]?.image)
-        }
+  const handleDeleteClick = () => {
+    fetch(`http://localhost:4000/saved-cities/${savedCity.id}`, {method: "DELETE"})
+      .then((r)=>r.json())
+      .then(()=>{
+        handleDelete(savedCity)
+      })
+  }
 
-      console.log(weatherIcons?.[0]?.image)
+  const temperatureConverter = (valNum) => {
+    valNum = parseFloat(valNum);
+    return (((valNum-273.15)*1.8)+32).toFixed(0);
+  }
 
-    return (
-        <div className="weather-card">
-            <Card className="ui-raised-card" >
-                <Card.Content>
-                    <Card.Header className="header">{weatherObj.name}</Card.Header>
-                    <h3>Country: {weatherObj.sys?.country}</h3>
-                    <h3>Feels like: {temperatureConverter(weatherObj.main?.feels_like)}ºF</h3>
-                    <h3>vibes: {weatherObj.weather?.[0].description}</h3>
-                    <img src={weatherIcon} alt={weatherObj.name}></img>
-                    <h3>cloudy: {weatherObj.clouds?.all}%</h3>
-                    <button onClick={handleDelete}>❌</button>
-                </Card.Content> 
-            </Card>
-        </div>
-    )
+  return (
+    <div className="weather-card">
+      <Card className="ui-raised-card" >
+        <Card.Content>
+          <Card.Header className="header">{weather.name}</Card.Header>
+            <h3>Country: {weather.sys?.country}</h3>
+            <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
+            <h3>vibes: {weather.weather?.[0].description}</h3>
+            <img src={`./images/${weather.weather?.[0].description}.svg`} alt={weather.name}></img>
+            <h3>cloudy: {weather.clouds?.all}%</h3>
+            <button className='buttonSize' onClick={handleDeleteClick}>delete</button>
+        </Card.Content> 
+      </Card>
+    </div>
+  )
 }
 
 export default SavedWeatherCard;

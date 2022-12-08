@@ -116,7 +116,6 @@ const Rotate = styled.div`
     <div className="cardDifs">
       <img src={images[currentIndex]} />
     </div>
-    
     <div className="flexbox-container">
       {renderWeatherCards()}
     </div>
