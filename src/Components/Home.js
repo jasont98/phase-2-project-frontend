@@ -4,6 +4,7 @@ import {createGlobalStyle} from "styled-components";
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
+import Main from './Main.jsx'
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -33,24 +34,23 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     }
   
 
-  const images = ["./snow-city.jpg", "./rainy-day.jpg", "./sunny-field.jpg", "./clear-night.jpg"]
+  // const images = ["./snow-city.jpg", "./rainy-day.jpg", "./sunny-field.jpg", "./clear-night.jpg"]
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+//   const [currentIndex, setCurrentIndex] = useState(0);
   
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-        if(currentIndex === images.length - 1) {
-            setCurrentIndex(0);
-        } 
-        else {
-             setCurrentIndex(currentIndex + 1);
-        }
-    }, 2000)
+//   useEffect(() => {
+//     const intervalId = setInterval(() => {
+//         if(currentIndex === images.length - 1) {
+//             setCurrentIndex(0);
+//         } 
+//         else {
+//              setCurrentIndex(currentIndex + 1);
+//         }
+//     }, 2000)
     
-    return () => clearInterval(intervalId);
-}, [])
-
-  const GlobalStyle = createGlobalStyle`
+//     return () => clearInterval(intervalId);
+// }, [])
+const GlobalStyle = createGlobalStyle`
     .About {
       text-align: center;
       color: darkcyan;
@@ -60,8 +60,8 @@ const Home = ({ displayedCitys, weatherIcon }) => {
   body {
     color: darkcyan; 
     font-family: Tahoma;
-    background-color: darkslateblue;
-    background-image: url("./snow-city.jpg"); 
+    /* background-color: darkslateblue; */
+    /* background-image: url("./snow-city.jpg");  */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -73,7 +73,8 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     // flexbox or css grid
     // mediaQuery
   }
-  .cardDifs {
+
+  /* .cardDifs {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -82,6 +83,33 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     z-index: -1;
     background-size: cover;
     background-position: center
+  } */
+  
+  // BOUNCE ANIMATION
+  .homeBtn:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-name: bounce;
+  }
+
+  // BOUNCE ANIMATION
+  .weather-card:hover {
+    animation-name: bounce;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.9s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-name: bounce;
+  }
+
+  .main {
+    width: 100%;
+    height: 100vh;
   }
 `
 
@@ -100,7 +128,10 @@ const Rotate = styled.div`
     animation: ${rotate} 2s linear infinite;
     padding: 2rem 1rem;
     font-size: 4.2rem;
-  `;
+    transition: transform 500ms; 
+    
+    transform: translateY(-10px);
+  `
 
   return (
     <>
@@ -108,17 +139,17 @@ const Rotate = styled.div`
     <div className='About' style={{ position: '' }}>
     <SnowFall />
       <br></br>
+    {/* <Rotate> 🥶 </Rotate>
       <br></br>
-    <Rotate> 🥶 </Rotate>
-      <br></br>
-       <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Home</h2> 
+       <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Home</h2>  */}
     </div>
-    <div className="cardDifs">
+    <Main renderWeatherCards={renderWeatherCards} />
+    {/* <div className="cardDifs">
       <img src={images[currentIndex]} />
-    </div>
-    <div className="flexbox-container">
+    </div> */}
+    {/* <div className="flexbox-container">
       {renderWeatherCards()}
-    </div>
+    </div> */}
     </>
   )
 }
