@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 import Search from './Search';
 import { Route, Switch } from 'react-router-dom'
 import CardList from './CardList';
+import Footer from './Footer';
 
 function App() {
 
@@ -79,6 +80,8 @@ function App() {
             <Home displayedCitys={displayedCitys} weatherIcon={weatherIcon} />
           </Route>
         </Switch>
+
+        <Footer />
     </div>
   );
 }
