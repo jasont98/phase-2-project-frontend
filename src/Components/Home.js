@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
 import "../App.css" 
 import Main from './Main.jsx'
+import {Card} from 'semantic-ui-react'
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -35,22 +36,6 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     }
   
 
-//   const images = ["./snow-city.jpg", "./rainy-day.jpg", "./sunny-field.jpg", "./clear-night.jpg"]
-
-//   const [currentIndex, setCurrentIndex] = useState(0);
-  
-//   useEffect(() => {
-//     const intervalId = setInterval(() => {
-//         if(currentIndex === images.length - 1) {
-//             setCurrentIndex(0);
-//         } 
-//         else {
-//              setCurrentIndex(currentIndex + 1);
-//         }
-//     }, 3000)
-    
-//     return () => clearInterval(intervalId);
-// }, [])
 
   const GlobalStyle = createGlobalStyle`
     .About {
@@ -62,7 +47,7 @@ const Home = ({ displayedCitys, weatherIcon }) => {
   body {
     color: darkcyan; 
     font-family: Tahoma;
-    background-color: darkslateblue;
+    /* background-color: darkslateblue; */
     /* background-image: url("./snow-city.jpg");  */
     position: absolute;
     width: 100%;
@@ -76,16 +61,6 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     // mediaQuery
   }
 
-  .cardDifs {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center
-  }
   
   // BOUNCE ANIMATION
   .homeBtn:hover {
@@ -140,14 +115,11 @@ const Rotate = styled.div`
     <GlobalStyle />
     <div className='About' style={{ position: '' }}>
     <SnowFall />
-    <Main renderWeatherCards={renderWeatherCards()}/>  
     </div>
-    <div className="cardDifs">
-      {/* <img src={images[currentIndex]} /> */}
-    </div>
-    <div className="flexbox-container">
+    <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
+    {/* <div className="flexbox-container">
       {renderWeatherCards()}
-    </div>
+    </div> */}
     </>
   )
 }
