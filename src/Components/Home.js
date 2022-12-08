@@ -4,7 +4,10 @@ import {createGlobalStyle} from "styled-components";
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
+
+import "../App.css" 
 import Main from './Main.jsx'
+
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -34,23 +37,9 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     }
   
 
-  // const images = ["./snow-city.jpg", "./rainy-day.jpg", "./sunny-field.jpg", "./clear-night.jpg"]
 
-//   const [currentIndex, setCurrentIndex] = useState(0);
-  
-//   useEffect(() => {
-//     const intervalId = setInterval(() => {
-//         if(currentIndex === images.length - 1) {
-//             setCurrentIndex(0);
-//         } 
-//         else {
-//              setCurrentIndex(currentIndex + 1);
-//         }
-//     }, 2000)
-    
-//     return () => clearInterval(intervalId);
-// }, [])
 const GlobalStyle = createGlobalStyle`
+
     .About {
       text-align: center;
       color: darkcyan;
@@ -74,16 +63,7 @@ const GlobalStyle = createGlobalStyle`
     // mediaQuery
   }
 
-  /* .cardDifs {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center
-  } */
+
   
   // BOUNCE ANIMATION
   .homeBtn:hover {
@@ -138,18 +118,8 @@ const Rotate = styled.div`
     <GlobalStyle />
     <div className='About' style={{ position: '' }}>
     <SnowFall />
-      <br></br>
-    {/* <Rotate> 🥶 </Rotate>
-      <br></br>
-       <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'} }>Home</h2>  */}
     </div>
-    <Main renderWeatherCards={renderWeatherCards} />
-    {/* <div className="cardDifs">
-      <img src={images[currentIndex]} />
-    </div> */}
-    {/* <div className="flexbox-container">
-      {renderWeatherCards()}
-    </div> */}
+    <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
     </>
   )
 }

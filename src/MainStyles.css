@@ -6,8 +6,10 @@
   }
   
   video {
+
     width: 100vw;
     height: 100vh;
+
     object-fit: cover;
     z-index: -2;
     position: fixed;
@@ -15,9 +17,9 @@
     right: 0;
     top: 0;
     bottom: 0;
+
     
   }
-
   .content {
     /* position: absolute; */
     /* width: 100%; */
@@ -28,16 +30,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    object-fit: cover;
-
   }
 
-  /* .flexbox-container {
-    padding-top: 30px;
-    display: flex;
-    flex-direction: row;
-    opacity: .9;
-    z-index: 10
-    
-   
-  }  */
+
+
