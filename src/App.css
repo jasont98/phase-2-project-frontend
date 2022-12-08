@@ -68,13 +68,26 @@
 }
 
 .flexbox-container {
+  /* padding-top: 30px;
+  display: flex;
+  flex-direction: row; */
+  opacity: .9;
+
+  
+
   padding-top: 30px;
   display: flex;
-  flex-direction: row;
-  opacity: .9;
+  grid-template-areas: "a a a a";
+
+  gap: 50px;
+  grid-auto-rows: 100px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+
+  row-gap: 510px;
+
   
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .flexbox-container2 {
@@ -99,12 +112,20 @@
 .saved-container {
   padding-top: 150px;
   display: flex;
-  flex-direction: row;
+  grid-template-areas: "a a a a";
+  gap: 10px;
+  grid-auto-rows: 100px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 510px;
+
 }
 
 .weather-card {
  margin: auto;
  font-size: 35px;
+
 }
 
 .search-bar {
@@ -119,3 +140,8 @@
 .ui-raised-card {
   backdrop-filter: blur(14px);
 }
+
+.buttonSize {
+  font-size: small;
+}
+
