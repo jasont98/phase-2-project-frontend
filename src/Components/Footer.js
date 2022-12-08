@@ -1,22 +1,51 @@
 import './footer.css'
+import {Link} from "react-router-dom"
 
 import React from 'react'
 
 function Footer() {
   return (
-    <section>
-        <hr />
-        <section>
-            <p> THIS IS A LINK OR SOMETING</p>
+    <section className="footer">
+        {/* <hr className="footer-seperator"/> */}
+        <section className="footer-social-media">
+            <a href="https://github.com/jasont98/phase-2-project-frontend" target="_blank">This Repo Here</a>
         </section>
-        <section>
-            <section>
+        <section className="footer-info">
+            <section className="footer-info-left">
+              <section className= "footer-info_name">
+                Software Engineers William, Ian, and JSON
+              </section>
+              <section className= "footer-info_returns">
+                SOMETING
+                <br />
+              </section>
 
             </section>
-            <section>
+            <section className="footer-info-center"> 
+              <section className="footer-info_email">
+                
+              </section>
+              <section className="footer-info_terms">
+              ©{(new Date().getFullYear())} IJW, Inc. All Rights Reserved              
+              
+                
+              </section>
                 
             </section>
+            <section className="footer-info-right">
+              
+              <section className="footer-info_contact">
+                <Link
+                  to="/about" exact>
+                  About
+                </Link>
+                <br />
+                <a href="mailto:william.j.german2@gmail.com">Send Us Feedback!</a>
+              </section>
+
+            </section>
         </section>
+        {/* <hr className="footer-seperator"/> */}
     </section>
   )
 }
