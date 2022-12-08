@@ -16,7 +16,7 @@ function App() {
   const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
   const [savedCitys, setSavedCitys] = useState([]);
   const [displayedCitys, setDisplayedCitys] = useState([]);
-  const [weatherIcon, setWeatherIcon] = useState('');
+  const [weatherIcon, setWeatherIcon] = useState({});
 
   useEffect(() => {
     fetch(queryURL)
@@ -49,22 +49,42 @@ function App() {
         (setWeatherIcon(weatherIcon?.[0]?.image))
       );
     }, []);
+
+    const [weatherIcons, setWeatherIcons] = useState([]);
+
+    useEffect(() => {
+      fetch("http://localhost:4000/weather-icons")
+        .then((r)=>r.json())
+        .then((weatherIcons)=> 
+        (setWeatherIcons(weatherIcons))
+      );
+    }, []);
     
-  console.log(weatherIcon);
+  console.log(weatherIcons);
+
+  // if (weatherIcon?.name === 'mist') {
+  //   setWeatherIcon(weatherIcon?.[0]?.image)
+  // } else if (weatherIcon?.name === 'sunny') {
+  //   setWeatherIcon(weatherIcon?.[1]?.image)
+  // }
+
+  // console.log(weatherIcon);
+
 
   const handleDelete = () => {}
 
   const handleSubmit = () => {}
+  
   return (
 
     <div className="App" >
       <NavBar />
         <Switch>
           <Route path="/watchlist" >
-            <CardList weatherIcon={weatherIcon} savedCitys={savedCitys} handleDelete={handleDelete} />
+            <CardList setWeatherIcon={setWeatherIcon} weatherIcons={weatherIcons} savedCitys={savedCitys} handleDelete={handleDelete} />
           </Route>
           <Route path="/search">
-            <Search weatherIcon={weatherIcon} weather={weather} onSubmitQuery={setCity} handleSubmit={handleSubmit} />
+            <Search setWeatherIcon={setWeatherIcon} weatherIcon={weatherIcon} weather={weather} onSubmitQuery={setCity} handleSubmit={handleSubmit} />
           </Route>
           <Route path= "/about">
             <About />

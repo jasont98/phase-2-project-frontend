@@ -28,7 +28,7 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     return weatherObjs.map((weatherObj) => {
       console.log(weatherObj)
       return (
-        <WeatherCard weather={weatherObj} weatherIcon={weatherIcon} />
+        <WeatherCard key={weatherObj.name} weather={weatherObj} weatherIcon={weatherIcon} />
       )})
     }
   

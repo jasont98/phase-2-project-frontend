@@ -8,6 +8,16 @@ function WeatherCard({ weather, weatherIcon }) {
         return (((valNum-273.15)*1.8)+32).toFixed(0);
       }
 
+    // const renderWeatherIcons = () => {
+    //     return weatherIcons.map((weatherIcon) => {
+    //     return (
+    //         console.log(weatherIcon)
+    //         )}
+    //     )
+    // }
+
+    // renderWeatherIcons()
+
     return (
         <div className="weather-card">
             <Card className="ui-raised-card" >
