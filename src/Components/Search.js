@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SearchWeatherCard from './SearchCard'
-import SnowFall from 'react-snowfall';
+
 
 function Search({ onSubmitQuery, weather, onAddCity, handleSwitch, isDusk }) {
     
@@ -26,7 +26,6 @@ function Search({ onSubmitQuery, weather, onAddCity, handleSwitch, isDusk }) {
             </div>
         </div>
         <div>
-            <SnowFall />
         </div>
         <div className="search-container">
             <form className={ isDusk ? 'search-bar' : 'search-bar1' } onSubmit={handleSubmit}>Search for a city, state or zipcode:

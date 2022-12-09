@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import SnowFall from 'react-snowfall';
 import {createGlobalStyle} from "styled-components";
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
@@ -114,7 +113,6 @@ const Rotate = styled.div`
     <>
     <GlobalStyle />
     <div className='About' style={{ position: '' }}>
-    <SnowFall />
     </div>
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
     {/* <div className="flexbox-container">

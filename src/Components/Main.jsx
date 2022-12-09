@@ -4,6 +4,7 @@ import '../App.css'
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import '../3dTitle.css'
+import '../About.css'
 
 const Main = ({renderWeatherCards}) => {
 
@@ -34,11 +35,13 @@ const Rotate = styled.div`
         <video src={`./sunset_clouds.mp4`} autoPlay loop muted/>
 
         <div className='content'>
-        <div className='3dContainer'>
-          <div className='material'>
-            <h2 className='text_shadows'>Home</h2>    
+        {/* <div className='3dContainer'>
+          <div className='material'> */}
+          <div className='infoTextHome-container'>
+            <h2 className='infoTextHome'>WeatherSearch.React</h2>    
           </div>
-        </div>
+          {/* </div>
+        </div> */}
           <div className='homeBtn'>
             <Rotate> 🥶 </Rotate>
           </div>
