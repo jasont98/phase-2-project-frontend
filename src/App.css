@@ -23,9 +23,7 @@
 }
 
 .flexbox-container {
-
   opacity: .8;
-
   padding-top: 30px;
   display: flex;
   grid-template-areas: "a a a a";
@@ -196,8 +194,8 @@ body {
   width: 100vw;
   top: 300;
   left: 0;
-  animation: sunset 3s ease-in 1;
-  animation-fill-mode: forwards; 
+  /* animation: sunset 3s ease-in 1;
+  animation-fill-mode: forwards;  */
   display: flex;
   gap: 10px;
   justify-content: space-around;
@@ -215,8 +213,8 @@ body {
   width: 100vw;
   top: 300;
   left: 0;
-  animation: sunrise 3s ease-in 1; 
-  animation-fill-mode: forwards; 
+  /* animation: sunrise 3s ease-in 1; 
+  animation-fill-mode: forwards;  */
   display: flex;
   gap: 50px;
   justify-content: space-around;

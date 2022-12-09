@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import {createGlobalStyle, ThemeProvider} from "styled-components";
+import React from 'react';
 import SnowFall from 'react-snowfall';
 
 

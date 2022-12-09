@@ -33,7 +33,6 @@ const Home = ({ displayedCitys, weatherIcon }) => {
       )})
     }  
 
-
 const GlobalStyle = createGlobalStyle`
 
     .About {
@@ -46,10 +45,11 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     top: 0;
     left: 0;
+    z-index: -1;
     background-size: cover;
     background-position: center
   }
-
+  
   // BOUNCE ANIMATION
   .weather-card:hover {
     animation-name: bounce;
