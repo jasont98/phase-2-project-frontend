@@ -75,7 +75,9 @@
 }
 
 .flexbox-container {
-  opacity: .9;
+
+  opacity: .8;
+
   padding-top: 30px;
   display: flex;
   grid-template-areas: "a a a a";

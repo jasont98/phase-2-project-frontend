@@ -4,7 +4,7 @@ import '../App.css'
 import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 
-const Main = ({renderWeatherCards, weatherIcon, displayedCitys}) => {
+const Main = ({renderWeatherCards}) => {
 
   const rotate = keyframes`
     from {
