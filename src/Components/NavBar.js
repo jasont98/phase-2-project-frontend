@@ -5,15 +5,9 @@ import "../navBar-style.css"
 const NavBar = () => {
   return (
     <div className="navBar">
-      <h1 className="logostyle">My Weather App  <NavLink id="globelogo" to="/" exact>
+      <NavLink id="globelogo" to="/" className="logostyle" exact>WeatherSearch.React 
       🌍
-      </NavLink></h1>
-     
-      
-    <NavLink className="navItem"
-    to="/" exact>
-      Home
-    </NavLink>
+      </NavLink>
     <NavLink className="navItem"
     to="/search" exact>
       Search
