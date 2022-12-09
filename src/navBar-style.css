@@ -23,6 +23,18 @@
     right: -20px
 }
 
+/* .logostyle:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-name: bounce;
+  
+} */
+
 .navItem {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -51,3 +63,15 @@ navItem:hover{
     position: relative;
     
 }
+
+/* .navItem:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-name: bounce;
+  
+} */

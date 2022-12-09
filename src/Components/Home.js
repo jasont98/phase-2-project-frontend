@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import SnowFall from 'react-snowfall';
 import {createGlobalStyle} from "styled-components";
 import WeatherCard from './WeatherCard'
+
 import "../App.css" 
 import Main from './Main.jsx'
 
@@ -28,15 +29,16 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     return weatherObjs.map((weatherObj) => {
       console.log(weatherObj)
       return (
-        <WeatherCard key={weatherObj.name} weather={weatherObj} weatherIcon={weatherIcon} />
+        <WeatherCard weather={weatherObj} weatherIcon={weatherIcon} />
       )})
-    }
+    }  
+
 
 const GlobalStyle = createGlobalStyle`
 
-  .About {
-    padding-top: 40px;
-  }
+    .About {
+      padding-top: 40px;
+    }
 
   body {
     position: absolute;
@@ -48,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     background-position: center
   }
-  
+
   // BOUNCE ANIMATION
   .homeBtn:hover {
     transform: scale(1.5);
