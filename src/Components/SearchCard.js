@@ -43,11 +43,11 @@ function SearchWeatherCard({ weather, onAddCity }) {
           {/* <Card.Header className="header" value={addCityData.name} >{weather.name}</Card.Header> */}
               <Card.Header className="header" >{weather.name}</Card.Header>
 
-                  <button onClick={handleClick} className='buttonSize'>Add to my Watch List!</button>
           <h3>Country: {weather.sys?.country}</h3>
           <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
           <h3>vibes: {weather.weather?.[0].description}</h3>
           <img src={`./images/${weather.weather?.[0].description}.svg`} alt={weather.name}></img>
+                  <button onClick={handleClick} className='buttonSize'>Add to my Watch List!</button>
           <h3>cloudy: {weather.clouds?.all}%</h3>
         </Card.Content> 
       </Card>
