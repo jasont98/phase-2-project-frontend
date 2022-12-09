@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import SnowFall from 'react-snowfall';
 import {createGlobalStyle} from "styled-components";
 import WeatherCard from './WeatherCard'
 
@@ -31,15 +30,21 @@ const Home = ({ displayedCitys, weatherIcon }) => {
       return (
         <WeatherCard weather={weatherObj} weatherIcon={weatherIcon} />
       )})
+
     }  
 
 const GlobalStyle = createGlobalStyle`
+
 
     .About {
       padding-top: 40px;
     }
 
   body {
+
+    color: darkcyan; 
+    font-family: Tahoma;
+
     position: absolute;
     width: 100%;
     height: 100%;
@@ -49,7 +54,21 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     background-position: center
   }
-  
+
+
+   // BOUNCE ANIMATION
+  .homeBtn:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-name: bounce;
+  }
+
+
   // BOUNCE ANIMATION
   .weather-card:hover {
     animation-name: bounce;
@@ -61,12 +80,32 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+
+const rotate = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  `
+
+const Rotate = styled.div`
+    display: inline-block;
+    animation: ${rotate} 2s linear infinite;
+    padding: 2rem 1rem;
+    font-size: 4.2rem;
+    transition: transform 500ms; 
+    transform: translateY(-10px);
+  `
+
   return (
     <>
-      <GlobalStyle />
-        <div className='About'>
-      <SnowFall />
-      </div>
+    <GlobalStyle />
+    <div className='About' style={{ position: '' }}>
+    </div>
+
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
     </>
   )

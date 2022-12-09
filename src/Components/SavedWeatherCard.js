@@ -23,6 +23,7 @@ function SavedWeatherCard({ savedCity, handleDelete }) {
     valNum = parseFloat(valNum);
     return (((valNum-273.15)*1.8)+32).toFixed(0);
   }
+  
 
   return (
     <div className="weather-card">
