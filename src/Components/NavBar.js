@@ -15,10 +15,6 @@ const NavBar = () => {
       Home
     </NavLink>
     <NavLink className="navItem"
-    to="/about" exact>
-      About
-    </NavLink>
-    <NavLink className="navItem"
     to="/search" exact>
       Search
     </NavLink>
@@ -26,8 +22,12 @@ const NavBar = () => {
     to="/watchlist" exact>
       My Weather
     </NavLink>
-  </div>)
-
+    <NavLink className="navItem"
+    to="/about" exact>
+      About
+    </NavLink>
+  </div>
+  )
 }
 
 export default NavBar;
