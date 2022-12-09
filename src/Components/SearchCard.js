@@ -47,7 +47,7 @@ function SearchWeatherCard({ weather, onAddCity }) {
           <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
           <h3>vibes: {weather.weather?.[0].description}</h3>
           <img src={`./images/${weather.weather?.[0].description}.svg`} alt={weather.name}></img>
-                  <button onClick={handleClick} className='buttonSize'>Add to my Watch List!</button>
+          <button onClick={handleClick} className='buttonSize'>Add to my Watch List!</button>
           <h3>cloudy: {weather.clouds?.all}%</h3>
         </Card.Content> 
       </Card>
