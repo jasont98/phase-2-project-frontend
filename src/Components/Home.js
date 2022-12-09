@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {createGlobalStyle} from "styled-components";
 import WeatherCard from './WeatherCard'
-
 import "../App.css" 
 import Main from './Main.jsx'
 
@@ -79,26 +78,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-animation-name: bounce;
   }
 `
-
-
-const rotate = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  `
-
-const Rotate = styled.div`
-    display: inline-block;
-    animation: ${rotate} 2s linear infinite;
-    padding: 2rem 1rem;
-    font-size: 4.2rem;
-    transition: transform 500ms; 
-    transform: translateY(-10px);
-  `
 
   return (
     <>

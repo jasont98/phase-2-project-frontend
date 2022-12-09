@@ -35,8 +35,7 @@ function SearchWeatherCard({ weather, onAddCity }) {
         <Card.Content>
 
           <Card.Header className="header" >{weather.name}</Card.Header>
-            <button onClick={handleClick} className='buttonSize'>Add to my Watch List!</button>
-
+            
           <h3>Country: {weather.sys?.country}</h3>
           <h3>Feels like: {temperatureConverter(weather.main?.feels_like)}ºF</h3>
           <h3>vibes: {weather.weather?.[0].description}</h3>
