@@ -19,6 +19,7 @@ function App() {
   const [displayedCitys, setDisplayedCitys] = useState([]);
   const [weatherIcon, setWeatherIcon] = useState({});
   const [weatherIcons, setWeatherIcons] = useState([]);
+  const [isDusk, setIsDusk] = useState(true)
 
   useEffect(() => {
     fetch(queryURL)
@@ -63,24 +64,29 @@ function App() {
       );
     }, []);
 
+  const handleSwitch = () => {
+    setIsDusk(!isDusk)
+  }
+
   return (
     <div className="App" >
-      <NavBar />
-        <Switch>
-          <Route path="/watchlist" >
-            <CardList savedCitys={savedCitys} handleDelete={handleDelete} />
-          </Route>
-          <Route path="/search">
-            <Search onSubmitQuery={setCity} weather={weather} onAddCity={onAddCity} />
-          </Route>
-          <Route path= "/about">
-            <About />
-          </Route>
-          <Route exact path="/">
-            <Home displayedCitys={displayedCitys} weatherIcon={weatherIcon} />
-          </Route>
-        </Switch>
-
+      <div className='main'>
+        <NavBar />
+          <Switch>
+            <Route path="/watchlist" >
+              <CardList handleSwitch={handleSwitch} isDusk={isDusk} savedCitys={savedCitys} handleDelete={handleDelete} />
+            </Route>
+            <Route path="/search">
+              <Search handleSwitch={handleSwitch} isDusk={isDusk} onSubmitQuery={setCity} weather={weather} onAddCity={onAddCity} />
+            </Route>
+            <Route path= "/about">
+              <About handleSwitch={handleSwitch} isDusk={isDusk} />
+            </Route>
+            <Route exact path="/">
+              <Home displayedCitys={displayedCitys} weatherIcon={weatherIcon} />
+            </Route>
+          </Switch>
+        </div>
         <Footer />
     </div>
   );
