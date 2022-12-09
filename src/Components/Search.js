@@ -24,18 +24,16 @@ function Search({ onSubmitQuery, weather, onAddCity, handleSwitch, isDusk }) {
                     <span className="slider"></span>
                 </label>
             </div>
-        </div>
-        <div>
-        </div>
-        <div className="search-container">
-            <form className={ isDusk ? 'search-bar' : 'search-bar1' } onSubmit={handleSubmit}>Search for a city, state or zipcode:
-                <input value={city} onChange={handleChange} />
-                <button>🔎</button>
-            </form>
-            <div className="flexbox-container2">
-                <SearchWeatherCard weather={weather} onAddCity={onAddCity} />
+            <div className="search-container">
+                <form className={ isDusk ? 'search-bar' : 'search-bar1' } onSubmit={handleSubmit}>Search for a city, state or zipcode:
+                    <input value={city} onChange={handleChange} />
+                    <button>🔎</button>
+                </form>
+                <div className="flexbox-container2">
+                    <SearchWeatherCard weather={weather} onAddCity={onAddCity} />
+                </div>
             </div>
-        </div>
+        </div>        
     </>
     )
 }
