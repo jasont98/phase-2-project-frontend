@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {createGlobalStyle} from "styled-components";
 import WeatherCard from './WeatherCard'
-
 import "../App.css" 
 import Main from './Main.jsx'
 
@@ -35,16 +34,14 @@ const Home = ({ displayedCitys, weatherIcon }) => {
 
 const GlobalStyle = createGlobalStyle`
 
-
     .About {
-      padding-top: 40px;
+      padding-top: 90px;
     }
 
   body {
 
     color: darkcyan; 
     font-family: Tahoma;
-
     position: absolute;
     width: 100%;
     height: 100%;
@@ -80,33 +77,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-
-const rotate = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  `
-
-const Rotate = styled.div`
-    display: inline-block;
-    animation: ${rotate} 2s linear infinite;
-    padding: 2rem 1rem;
-    font-size: 4.2rem;
-    transition: transform 500ms; 
-    transform: translateY(-10px);
-  `
-
   return (
     <>
     <GlobalStyle />
-    <div className='About' style={{ position: '' }}>
-    </div>
-
+    <div className='About'>
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
+    </div>
     </>
   )
 }

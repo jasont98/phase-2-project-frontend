@@ -1,9 +1,7 @@
 import { Card } from 'semantic-ui-react'
 import React from 'react';
 
-
 function WeatherCard({ weather }) {
-
 
     const temperatureConverter = (valNum) => {
         valNum = parseFloat(valNum);

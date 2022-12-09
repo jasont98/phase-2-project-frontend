@@ -31,19 +31,12 @@ const Rotate = styled.div`
     <div className='main'>
         <video src={`./sunset_clouds.mp4`} autoPlay loop muted/>
         <div className='content'>
-
-        {/* <div className='3dContainer'>
-          <div className='material'> */}
           <div className='infoTextHome-container'>
             <h2 className='infoTextHome'>WeatherSearch.React</h2>    
           </div>
-          {/* </div>
-        </div> */}
           <div className='homeBtn'>
             <Rotate> 🥶 </Rotate>
           </div>
-
-
           <div className="flexbox-container">
             {renderWeatherCards()}
           </div>
