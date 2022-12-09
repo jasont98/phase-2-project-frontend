@@ -20,7 +20,6 @@ function SearchWeatherCard({ weather, onAddCity }) {
       .then((r)=>r.json())
       .then((city)=> {
         onAddCity(city);
-        console.log(addCityData);
       })    
     }
   
