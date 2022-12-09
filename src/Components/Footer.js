@@ -1,4 +1,4 @@
-import './footer.css'
+import '../footer.css'
 import {Link} from "react-router-dom"
 
 import React from 'react'
@@ -42,10 +42,8 @@ function Footer() {
                 <br />
                 <a href="mailto:william.j.german2@gmail.com">Send Us Feedback!</a>
               </section>
-
             </section>
         </section>
-        {/* <hr className="footer-seperator"/> */}
     </section>
   )
 }

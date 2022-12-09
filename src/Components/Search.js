@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SearchWeatherCard from './SearchCard'
 import SnowFall from 'react-snowfall';
 
-function Search({ onSubmitQuery, weather, onAddCity }) {
+function Search({ onSubmitQuery, weather, onAddCity, handleSwitch, isDusk }) {
     
     const [city, setCity] = useState("");
 
@@ -16,10 +16,20 @@ function Search({ onSubmitQuery, weather, onAddCity }) {
     }
 
     return (
-        <div className='About' style={{   position: '' }}>
-        <SnowFall />
+    <>
+        <div className={ isDusk ? 'dusk' : 'dawn' }> 
+            <div className='switchDiv' id='somshit'>
+                <label className="switch">
+                    <input type="checkbox" onChange={handleSwitch} />
+                    <span className="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div>
+            <SnowFall />
+        </div>
         <div className="search-container">
-            <form className="search-bar" onSubmit={handleSubmit}>Search for a city, state or zipcode:
+            <form className={ isDusk ? 'search-bar' : 'search-bar1' } onSubmit={handleSubmit}>Search for a city, state or zipcode:
                 <input value={city} onChange={handleChange} />
                 <button>🔎</button>
             </form>
@@ -27,7 +37,7 @@ function Search({ onSubmitQuery, weather, onAddCity }) {
                 <SearchWeatherCard weather={weather} onAddCity={onAddCity} />
             </div>
         </div>
-    </div>
+    </>
     )
 }
 
