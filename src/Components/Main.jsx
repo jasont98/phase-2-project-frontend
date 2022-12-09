@@ -32,7 +32,7 @@ const Rotate = styled.div`
           <div className='homeBtn'>
             <Rotate> 🥶 </Rotate>
           </div>
-          <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'}} className="homeBtn"></h2> 
+          <h2 style={{color: 'darkcyan', fontFamily: 'Tahoma'}} className="homeBtn">WeatherSearch.react</h2> 
           <div className="flexbox-container">
             {renderWeatherCards()}
           </div>

@@ -46,21 +46,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
     background-size: cover;
     background-position: center
-  }
-
-  // BOUNCE ANIMATION
-  .homeBtn:hover {
-    transform: scale(1.5);
-    cursor: pointer;
-    animation-name: bounce;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -moz-animation-name: bounce;
   }
 
   // BOUNCE ANIMATION
