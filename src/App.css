@@ -25,7 +25,7 @@
   opacity: .8;
   padding-top: 30px;
   display: flex;
-  grid-template-areas: "a a a a";
+  grid-template-areas: "a a a a a";
   gap: 50px;
   grid-auto-rows: 100px;
   display: grid;
@@ -78,7 +78,7 @@
   display: grid;
   justify-content: space-around;
   align-items: center;
-  row-gap: 510px;
+  row-gap: 550px;
 }
 
 .weather-card {
