@@ -237,7 +237,6 @@
   100% { background-position: 0 0; }
 }
 
-
 .switch {
   margin: 20px;
   display: inline-block;
@@ -245,6 +244,7 @@
   height: 34px;
   position: relative;
 }
+
 .switchDiv{
   position: fixed;
   right: 50px;
@@ -261,6 +261,7 @@
   width: 0;
   height: 0;
 }
+
 .slider {
   border-radius: 30px;
   position: absolute;
@@ -273,6 +274,7 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
+
 .slider:before {
   position: absolute;
   content: "";
@@ -285,6 +287,7 @@
   transition: .4s;
   border-radius: 50%;
 }
+
 input:checked + .slider {
   background-color: #2c55db;
 }
@@ -304,11 +307,11 @@ body {
   height: 100%;
   width: 100%;
 }
+
 #root {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  
 }
 
 .dusk {
@@ -327,7 +330,6 @@ body {
   gap: 10px;
   justify-content: space-around;
   align-items: flex-start;
-  
 }
 
 .dawn {

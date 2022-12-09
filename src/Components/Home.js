@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
 import "../App.css" 
 import Main from './Main.jsx'
-import {Card} from 'semantic-ui-react'
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -34,8 +33,6 @@ const Home = ({ displayedCitys, weatherIcon }) => {
       )})
     }
   
-
-
   const GlobalStyle = createGlobalStyle`
     .About {
       text-align: center;
@@ -46,8 +43,6 @@ const Home = ({ displayedCitys, weatherIcon }) => {
   body {
     color: darkcyan; 
     font-family: Tahoma;
-    /* background-color: darkslateblue; */
-    /* background-image: url("./snow-city.jpg");  */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -56,12 +51,9 @@ const Home = ({ displayedCitys, weatherIcon }) => {
     z-index: -1;
     background-size: cover;
     background-position: center
-    // flexbox or css grid
-    // mediaQuery
   }
 
-  
-  // BOUNCE ANIMATION
+   // BOUNCE ANIMATION
   .homeBtn:hover {
     transform: scale(1.5);
     cursor: pointer;
@@ -97,7 +89,7 @@ const rotate = keyframes`
     to {
       transform: rotate(360deg);
     }
-  `;
+  `
 
 const Rotate = styled.div`
     display: inline-block;
@@ -105,7 +97,6 @@ const Rotate = styled.div`
     padding: 2rem 1rem;
     font-size: 4.2rem;
     transition: transform 500ms; 
-    
     transform: translateY(-10px);
   `
 
@@ -115,9 +106,6 @@ const Rotate = styled.div`
     <div className='About' style={{ position: '' }}>
     </div>
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
-    {/* <div className="flexbox-container">
-      {renderWeatherCards()}
-    </div> */}
     </>
   )
 }
