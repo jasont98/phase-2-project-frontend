@@ -23,9 +23,20 @@ function App() {
 
   useEffect(() => {
     fetch(queryURL)
-      .then((r)=>r.json())
-      .then((weather)=> 
-      (setWeather(weather))
+      .then((r)=>{
+        if (r.status === 404) {
+          alert('That aint a place my dude')
+        } else {
+          return r.json()
+        }
+      })
+      .then((weather)=> {
+        if (weather.type === 'error') {
+          console.log(weather.type, weather.message)
+        } else {
+          setWeather(weather)
+        }
+      }
     );
   }, [queryURL])
 
