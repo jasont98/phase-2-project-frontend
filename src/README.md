@@ -2,6 +2,8 @@
 
 My Weather App is an app created using JavaScript and React for tracking weather data from around the world. 
 
+This weather application uses https://openweathermap.org/ to fetch real time weather data around the world. 
+
 Users need to simply click on the search navigation feature and type in a city, state, or zip code to access basic weather data accessed from an external API.
 
 Users can save this data and add it to a watchlist that is accessed via the navigation bar. This data is persisted to a server and so will be saved for future use.

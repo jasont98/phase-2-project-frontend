@@ -12,7 +12,6 @@ const Main = ({renderWeatherCards}) => {
     from {
       transform: rotate(0deg);
     }
-
     to {
       transform: rotate(360deg);
     }
@@ -24,17 +23,15 @@ const Rotate = styled.div`
     padding: 2rem 1rem;
     font-size: 4.2rem;
     transition: transform 500ms; 
-    
     transform: translateY(-10px);
   `
 
   return (
     <>
     <div className='main'>
-
         <video src={`./sunset_clouds.mp4`} autoPlay loop muted/>
-
         <div className='content'>
+
         {/* <div className='3dContainer'>
           <div className='material'> */}
           <div className='infoTextHome-container'>
@@ -45,6 +42,7 @@ const Rotate = styled.div`
           <div className='homeBtn'>
             <Rotate> 🥶 </Rotate>
           </div>
+
 
           <div className="flexbox-container">
             {renderWeatherCards()}

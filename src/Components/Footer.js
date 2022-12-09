@@ -6,7 +6,6 @@ import React from 'react'
 function Footer() {
   return (
     <section className="footer">
-        {/* <hr className="footer-seperator"/> */}
         <section className="footer-social-media">
             <a href="https://github.com/jasont98/phase-2-project-frontend" target="_blank">This Repo Here</a>
         </section>
