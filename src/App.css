@@ -111,13 +111,6 @@
   font-size: small;
 }
 
-.switch {
-  margin: 20px;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  position: relative;
-}
 .switchDiv{
   position: fixed;
   right: 50px;
@@ -127,6 +120,14 @@
 
 #someshit{
   z-index: 10;
+}
+
+.switch {
+  margin: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
 }
 
 .switch input { 
