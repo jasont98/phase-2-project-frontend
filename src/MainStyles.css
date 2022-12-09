@@ -9,17 +9,15 @@
 
     width: 100vw;
     height: 100vh;
-
     object-fit: cover;
     z-index: -2;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
-
-    
+    bottom: 0; 
   }
+  
   .content {
     /* position: absolute; */
     /* width: 100%; */
@@ -29,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: darkcyan;;
   }
 
 
