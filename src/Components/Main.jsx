@@ -5,6 +5,7 @@ import { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import '../3dTitle.css'
 import '../About.css'
+import {Link} from "react-router-dom"
 
 const Main = ({renderWeatherCards}) => {
 
@@ -35,7 +36,7 @@ const Rotate = styled.div`
             <h2 className='infoTextHome'>WeatherSearch.React</h2>    
           </div>
           <div className='homeBtn'>
-            <Rotate> 🥶 </Rotate>
+            <Rotate> <Link to="/about"> 🥶 </Link> </Rotate>
           </div>
           <div className="flexbox-container">
             {renderWeatherCards()}
