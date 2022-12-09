@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import SnowFall from 'react-snowfall';
 import {createGlobalStyle} from "styled-components";
-import { keyframes } from 'styled-components';
-import styled from 'styled-components';
 import WeatherCard from './WeatherCard'
-
 import "../App.css" 
 import Main from './Main.jsx'
-
 
 const Home = ({ displayedCitys, weatherIcon }) => {
 
@@ -35,22 +31,14 @@ const Home = ({ displayedCitys, weatherIcon }) => {
         <WeatherCard key={weatherObj.name} weather={weatherObj} weatherIcon={weatherIcon} />
       )})
     }
-  
-
 
 const GlobalStyle = createGlobalStyle`
 
-    .About {
-      text-align: center;
-      color: darkcyan;
-      padding-top: 80px;
-    }
+  .About {
+    padding-top: 40px;
+  }
 
   body {
-    color: darkcyan; 
-    font-family: Tahoma;
-    /* background-color: darkslateblue; */
-    /* background-image: url("./snow-city.jpg");  */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -59,11 +47,7 @@ const GlobalStyle = createGlobalStyle`
     z-index: -1;
     background-size: cover;
     background-position: center
-    // flexbox or css grid
-    // mediaQuery
   }
-
-
   
   // BOUNCE ANIMATION
   .homeBtn:hover {
@@ -86,39 +70,14 @@ const GlobalStyle = createGlobalStyle`
     animation-fill-mode: both;
     -moz-animation-name: bounce;
   }
-
-  .main {
-    width: 100%;
-    height: 100vh;
-  }
 `
-
-const rotate = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  `;
-
-const Rotate = styled.div`
-    display: inline-block;
-    animation: ${rotate} 2s linear infinite;
-    padding: 2rem 1rem;
-    font-size: 4.2rem;
-    transition: transform 500ms; 
-    
-    transform: translateY(-10px);
-  `
 
   return (
     <>
-    <GlobalStyle />
-    <div className='About' style={{ position: '' }}>
-    <SnowFall />
-    </div>
+      <GlobalStyle />
+        <div className='About'>
+      <SnowFall />
+      </div>
     <Main renderWeatherCards={renderWeatherCards} weatherIcon={weatherIcon} displayededCitys={displayedCitys}/>  
     </>
   )

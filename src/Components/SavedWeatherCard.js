@@ -2,7 +2,6 @@ import { Card } from 'semantic-ui-react'
 import React, {useState, useEffect} from 'react';
 
 function SavedWeatherCard({ savedCity, handleDelete }) {
-  // const { id, date, description, category, amount } = weather;
   const [weather, setWeather] = useState({});
   const APIKey = '963f1edba44b1dcf82fe895ef811cf6a';
 
